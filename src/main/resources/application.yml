@@ -1,0 +1,6 @@
+micronaut:
+  function:
+    name: alexa-billingo-client
+billingo:
+  api-key: put-your-api-key-here
+  secret: put-your-secret-here
