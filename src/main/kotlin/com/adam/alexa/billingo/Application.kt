@@ -17,7 +17,7 @@ class Application(@Inject private val billingoService: BillingoService) {
     @IntentHandler("BillingoIntent")
     fun billingoHandler(input: HandlerInput): Optional<Response> {
         val intentRequest = input.request as IntentRequest
-        val year = intentRequest.intent.slots["year"]?.value?.toInt()
+        val year = intentRequest.intent.slots?.get("year")?.value?.toInt()
         val queryYear = year ?: LocalDate.now().year
         val sum = billingoService.sumByYear(queryYear)
 
